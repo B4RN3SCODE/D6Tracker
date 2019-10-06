@@ -95,11 +95,15 @@ class D6Main {
 		foreach($data as $i => $str) {
 			if(!empty($str) && strlen($str) > 0) {
 				$this->_exemptDays[$i] = str_getcsv(rtrim($str, ","));
+				// subtract one so the day index matches up with other day indexes
+				// because itll pass 1,2,3,4 and first day indexes are 0,1,2,3
+				foreach($this->_exemptDays[$i] as $edi => $edv) {
+					$this->_exemptDays[$i][$edi]--;
+				}
 			} else {
 				$this->_exemptDays[$i] = array();
 			}
 		}
-
 	}
 
 
@@ -215,6 +219,7 @@ class D6Main {
 
 
 	public function resetHasHadDutyLog() {
+		echo "<h2 style=\"color:red;\">Reseting everyone whos had duty</h2>";
 		$this->_hadDutyThisMonth = array();
 	}
 
@@ -311,9 +316,11 @@ class D6Main {
 			foreach($daysToCheck as $index => $numOfDays) {
 
 				$numTries++;
-				if($numTries > 100) { $this->resetHasHadDutyLog(); }
-
-				if($numOfDays > $currentHighest["days"] && !$this->isExempt($this->_dutyNames[$index], $day) && !$this->hasHadDuty($this->_dutyNames[$index])) {
+				if($numTries > 10000) { $this->resetHasHadDutyLog(); }
+				// subtract one from day for the is exempt function
+				// because the day will be passed as day of month
+				// day first day of month (day o in array) will be passed as 1
+				if($numOfDays > $currentHighest["days"] && !$this->isExempt($this->_dutyNames[$index], $day-1) && !$this->hasHadDuty($this->_dutyNames[$index])) {
 					$currentHighest = array("name" => $this->_dutyNames[$index], "days" => $numOfDays);
 					$dayIndex = $index;
 				}
@@ -327,6 +334,7 @@ class D6Main {
 
 
 		}
+
 
 
 		return $highestDays;
