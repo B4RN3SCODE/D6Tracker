@@ -415,7 +415,7 @@ class D6Main {
 		 * based on value passed on first form */
 
 		$dayStr = ($day > 9) ? "{$day}" : "0{$day}";
-		$date = "2019-{$this->_periodMonth}-{$dayStr}";
+		$date = "2020-{$this->_periodMonth}-{$dayStr}";
 
 		$dayName = date("D", strtotime($date));
 

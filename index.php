@@ -42,7 +42,6 @@ if(!$isPost) {
 					<td>
 						<textarea col="4" rows="20" id="txtDaysSinceWeekendDuty" name="daysSinceWeekendDuty"></textarea><br />
 
-
 					</td>
 
 					<td>
@@ -51,8 +50,8 @@ if(!$isPost) {
 
 					<td>
 						<select id="selMonth" name="periodMonth">
-							<option value="jan">JAN</option><option value="feb">FEB</option><option value="mar">MAR</option><option value="apr">APR</option><option value="may">MAY</option><option value="jun">JUN</option>
-							<option value="jul">JUL</option><option value="AUG">AUG</option><option value="SEP">SEP</option><option value="OCT">OCT</option><option value="NOV">NOV</option><option value="DEC">DEC</option>
+							<option value="JAN">JAN</option><option value="FEB">FEB</option><option value="MAR">MAR</option><option value="APR">APR</option><option value="MAY">MAY</option><option value="JUN">JUN</option>
+							<option value="JUL">JUL</option><option value="AUG">AUG</option><option value="SEP">SEP</option><option value="OCT">OCT</option><option value="NOV">NOV</option><option value="DEC">DEC</option>
 						</select>
 					</td>
 

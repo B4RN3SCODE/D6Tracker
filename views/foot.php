@@ -5,11 +5,12 @@
 	function list2comsep(elm) {
 		if(!elm) return null;
 
-		var data = $(elm).val();
+		var data = $(elm).val().trim();
 		var nls = data.match(/\n/g);
 		if(null == nls || nls.length < 1) {
 			//alert("Something fucked up\nCant find the list or something.....");
 		} else {
+			console.log(data.replace(/\,/g, "-"));
 			$(elm).val(data.replace(/\n/g, ","));
 			//alert("Converted list to comma separated list");
 		}
@@ -26,6 +27,7 @@
 		}
 		$("#txtCqDays").val(days.join(","));
 	});
+
 </script>
 	</body>
 
