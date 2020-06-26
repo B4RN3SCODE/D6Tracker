@@ -29,6 +29,8 @@ if(!empty($errorStr)) {
 
 	D6Main::sessionStart();
 
+	var_dump($_SESSION);
+
 	$_SESSION["dutyNames"] = $app->_dutyNames;
 	$_SESSION["daysSinceWeekendDuty"] = $app->_daysSinceWeekendDuty;
 	$_SESSION["daysSinceWeekdayDuty"] = $app->_daysSinceWeekdayDuty;
@@ -39,7 +41,7 @@ if(!empty($errorStr)) {
 
 	echo $app->buildExemptTable();
 
-
+var_dump($_SESSION);
 
 
 }
