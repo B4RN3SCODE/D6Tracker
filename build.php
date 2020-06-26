@@ -16,6 +16,8 @@ $app->newD6Main(array(
 ));
 
 
+var_dump($_SESSION);
+
 // populate the request data so we can build the exempt var in object
 $requestData = array();
 foreach($app->_dutyNames as $idx => $name) {
