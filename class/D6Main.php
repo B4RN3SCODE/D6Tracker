@@ -426,23 +426,23 @@ class D6Main {
 
 
 	public static function sessionStart() {
-		if(isset($_SESSION["PHPSESSID"]) && $_SESSION["PHPSESSID"] == true && isset($_COOKIE["PHPSESSID"]) && !(is_null(session_id())))
-			return false;
+		//if(isset($_SESSION["PHPSESSID"]) && $_SESSION["PHPSESSID"] == true && isset($_COOKIE["PHPSESSID"]) && !(is_null(session_id())))
+			//return false;
 
-		if(isset($_SESSION["PHPSESSID"])) unset($_SESSION["PHPSESSID"]);
+		//if(isset($_SESSION["PHPSESSID"])) unset($_SESSION["PHPSESSID"]);
 		session_start();
-		$_SESSION["PHPSESSID"] = true;
+		//$_SESSION["PHPSESSID"] = true;
 		return true;
 	}
 
 
 	public static function sessionStop() {
-		if(isset($_SESSION["PHPSESSID"]))
-			unset($_SESSION["PHPSESSID"]);
+		//if(isset($_SESSION["PHPSESSID"]))
+			//unset($_SESSION["PHPSESSID"]);
 
-		if(session_id() != "") {
+		//if(session_id() != "") {
 			session_destroy();
-		}
+		//}
 	}
 
 
