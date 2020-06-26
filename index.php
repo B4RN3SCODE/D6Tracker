@@ -1,6 +1,7 @@
 <?php
-var_dump(empty(session_id()));
-
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 $isPost = false;
 
 if(isset($_REQUEST) && isset($_REQUEST["submit"]) && $_REQUEST["submit"] === "true") {

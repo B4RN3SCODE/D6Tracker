@@ -1,4 +1,7 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
 class D6Main {
 
@@ -428,6 +431,7 @@ class D6Main {
 	public static function sessionStart() {
 		$sessdir = dirname(dirname(__FILE__)).'/session';
 ini_set('session.save_path', $sessdir);
+echo "using {$sessdir}";
 		//if(isset($_SESSION["PHPSESSID"]) && $_SESSION["PHPSESSID"] == true && isset($_COOKIE["PHPSESSID"]) && !(is_null(session_id())))
 			//return false;
 
