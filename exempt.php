@@ -40,9 +40,6 @@ if(!empty($errorStr)) {
 	echo $app->buildExemptTable();
 
 
-	var_dump($_SESSION);
-
-
 
 
 }
