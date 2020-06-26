@@ -430,7 +430,7 @@ class D6Main {
 			//return false;
 
 		//if(isset($_SESSION["PHPSESSID"])) unset($_SESSION["PHPSESSID"]);
-		if(is_null(session_id()))
+		if(empty(session_id()))
 			session_start();
 		//$_SESSION["PHPSESSID"] = true;
 		return true;

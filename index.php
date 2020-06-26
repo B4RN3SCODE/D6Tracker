@@ -1,5 +1,5 @@
 <?php
-var_dump(session_id());
+var_dump(empty(session_id()));
 
 $isPost = false;
 

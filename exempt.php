@@ -69,6 +69,5 @@ scr;
 
 include_once("views/foot.php");
 
-D6Main::sessionStop();
 
 ?>
