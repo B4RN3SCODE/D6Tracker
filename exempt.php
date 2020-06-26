@@ -7,7 +7,7 @@ ini_set('session.save_path', $sessdir);
 
 include_once("class/D6Main.php");
 
-$requiredVars = array("dutyNames", "daysSinceWeekendDuty", "daysSinceWeekdayDuty", "periodMonth", "cqDays", "sdDays", "drcDays");
+$requiredVars = array("dutyNames", "daysSinceWeekendDuty", "daysSinceWeekdayDuty", "periodMonth", "cqDays");
 
 $errorStr = "";
 
