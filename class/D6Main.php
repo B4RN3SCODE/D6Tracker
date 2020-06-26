@@ -426,6 +426,8 @@ class D6Main {
 
 
 	public static function sessionStart() {
+		$sessdir = dirname(dirname(__FILE__)).'/session';
+ini_set('session.save_path', $sessdir);
 		//if(isset($_SESSION["PHPSESSID"]) && $_SESSION["PHPSESSID"] == true && isset($_COOKIE["PHPSESSID"]) && !(is_null(session_id())))
 			//return false;
 

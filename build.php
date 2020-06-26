@@ -8,8 +8,6 @@ include_once("class/D6Main.php");
 
 D6Main::sessionStart();
 
-var_dump(session_id());
-
 $app = new D6Main("","","","","","","", true);
 $app->newD6Main(array(
 	"_dutyNames"	=>	$_SESSION["dutyNames"],
