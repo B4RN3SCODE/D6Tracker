@@ -1,5 +1,4 @@
 <?php
-var_dump($_SESSION);
 include_once("class/D6Main.php");
 
 
@@ -41,6 +40,6 @@ echo $app->buildMasterRosterTable();
 
 include_once("views/foot.php");
 
-
+D6Main::sessionStop();
 
 ?>
