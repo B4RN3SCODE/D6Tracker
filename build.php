@@ -1,10 +1,9 @@
 <?php
+var_dump($_SESSION);
 include_once("class/D6Main.php");
 
 
 D6Main::sessionStart();
-
-var_dump($_SESSION);
 
 $app = new D6Main("","","","","","","", true);
 $app->newD6Main(array(
@@ -16,9 +15,6 @@ $app->newD6Main(array(
 	"_sdDays"	=>	$_SESSION["sdDays"],
 	"_drcDays"	=>	$_SESSION["drcDays"]
 ));
-
-
-var_dump($_SESSION);
 
 // populate the request data so we can build the exempt var in object
 $requestData = array();
