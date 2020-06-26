@@ -139,6 +139,8 @@ class D6Main {
 
 	public function buildMasterRosterTable() {
 
+		var_dump($this);
+
 		$tblStr = "<table><tr><th>Name</th>";
 		foreach($this->_masterRoster as $mri => $mrdata) {
 			$hday = $mri + 1;
