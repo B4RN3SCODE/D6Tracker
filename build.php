@@ -1,14 +1,14 @@
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+//ini_set('display_errors', 1);
+//ini_set('display_startup_errors', 1);
+//error_reporting(E_ALL);
 
 include_once("class/D6Main.php");
 
 
 D6Main::sessionStart();
 
-var_dump($_SESSION);
+var_dump(session_id());
 
 $app = new D6Main("","","","","","","", true);
 $app->newD6Main(array(
