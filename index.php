@@ -2,9 +2,10 @@
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-$sessdir = dirname(dirname(__FILE__)).'/session';
-ini_set('session.save_path', $sessdir);
+//$sessdir = dirname(dirname(__FILE__)).'/session';
+//ini_set('session.save_path', $sessdir);
 
+$isPost = false;
 if(isset($_REQUEST) && isset($_REQUEST["submit"]) && $_REQUEST["submit"] === "true") {
 	$isPost = true;
 }
