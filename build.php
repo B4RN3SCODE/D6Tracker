@@ -10,6 +10,13 @@ include_once("class/D6Main.php");
 
 D6Main::sessionStart();
 
+//if(!isset($_SESSION["dutyNames"]) || empty($_SESSION["dutyNames"])) {
+	$sessionData = json_decode($_REQUEST["sessionData"]);
+	foreach($sessionData as $prop => $val) {
+		$_SESSION[$prop] = $val;
+	}
+//}
+
 $app = new D6Main("","","","","","","", true);
 $app->newD6Main(array(
 	"_dutyNames"	=>	$_SESSION["dutyNames"],

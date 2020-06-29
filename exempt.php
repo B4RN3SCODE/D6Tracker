@@ -43,6 +43,8 @@ if(!empty($errorStr)) {
 	$_SESSION["sdDays"] = $app->_sdDays;
 	$_SESSION["drcDays"] = $app->_drcDays;
 
+	$sessionData = json_encode($_SESSION);
+
 	echo $app->buildExemptTable();
 
 
@@ -53,6 +55,7 @@ if(!empty($errorStr)) {
 echo <<<scr
 
 		<script type="text/javascript">
+
 			$("#btnSubmit").on("click", function(e) {
 				e.preventDefault();
 
@@ -65,6 +68,8 @@ echo <<<scr
 					}
 					$(elm).val(exDays.toString());
 				});
+
+				$("#sessData").val(JSON.stringify({$sessionData}));
 
 				$("#frmExempt").submit();
 			});

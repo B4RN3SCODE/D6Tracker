@@ -113,7 +113,7 @@ class D6Main {
 
 	public function buildExemptTable() {
 
-		$tblStr = "<form method=\"POST\" action=\"build.php\" id=\"frmExempt\">";
+		$tblStr = "<form method=\"POST\" action=\"build.php\" id=\"frmExempt\"><input type=\"hidden\" id=\"sessData\" name=\"sessionData\" value=\"\">";
 		$tblRowsStr = "";
 
 		// add in hidden elms
