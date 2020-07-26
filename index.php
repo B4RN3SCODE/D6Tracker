@@ -5,6 +5,11 @@
 //$sessdir = dirname(dirname(__FILE__)).'/session';
 //ini_set('session.save_path', $sessdir);
 
+
+die("<html><head><title>Barnes Gets Days Off</title></head><body><center><h1>This App will be available when Barnes gets appropriate proceeds</h1></center></body></html>");
+exit;
+
+
 $isPost = false;
 if(isset($_REQUEST) && isset($_REQUEST["submit"]) && $_REQUEST["submit"] === "true") {
 	$isPost = true;

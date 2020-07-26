@@ -202,12 +202,16 @@ class D6Main {
 			$highestDays = $this->findHighestLastDuties($dayDuties, $weekend, $day);
 
 			$assignedDuties = $this->assignDuty($dayDuties, $highestDays, $day);
+			//var_dump($assignedDuties);
 			foreach($assignedDuties as $ai => $data) {
 				$nameIndex = $this->findNameIndex($data["name"]);
+				if(empty($nameIndex) || is_null($nameIndex)) {
+					//var_dump($data["name"]);
+					//var_dump("FATAL");
+				}
 				$dayData[$nameIndex] = $data["days"];
 			}
 		}
-
 
 
 		$this->addToMasterRoster($dayData);
@@ -250,7 +254,7 @@ class D6Main {
 
 
 	public function assignDuty($duties, $data, $day) {
-
+		//var_dump($duties, $data, $day);
 		$returnData = array();
 		foreach($duties as $idx => $d) {
 			$canAssign = self::$_DutyRunners[$d];
@@ -319,7 +323,7 @@ class D6Main {
 			foreach($daysToCheck as $index => $numOfDays) {
 
 				$numTries++;
-				if($numTries > 10000) { $this->resetHasHadDutyLog(); }
+				if($numTries > 1000) { echo "resetting has had duty"; $this->resetHasHadDutyLog(); }
 				// subtract one from day for the is exempt function
 				// because the day will be passed as day of month
 				// day first day of month (day o in array) will be passed as 1
@@ -337,8 +341,6 @@ class D6Main {
 
 
 		}
-
-
 
 		return $highestDays;
 	}
